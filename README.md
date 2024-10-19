@@ -1,6 +1,6 @@
 # Ansible Quickstart Guide
 
-## TL:DR
+## TL:DR for installation, configuration and Running 
 
 ## Install 
 ```
@@ -34,6 +34,25 @@ ansible servers -a "uptime" -u ubuntu
 ansible all -m ping -u ubuntu
 ansible-playbook -i inventory.ini playbook.yaml
 ```
+
+## Simple Playbook
+
+```
+---
+- name: Get the current date from all servers
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Show date from all machines
+      command: date
+      register: date_output
+
+    - name: Display the date
+      debug:
+        var: date_output.stdout
+```
+
+
 
 # Ansible Zero to Hero
 
