@@ -1,13 +1,17 @@
 # Ansible Quickstart Guide
 
 ## TL:DR
+
+## Install 
 ```
 sudo apt update
 sudo apt install software-properties-common
 sudo add-apt-repository --yes --update ppa:ansible/ansible
 sudo apt install ansible
+```
 
-sudo nano /etc/ansible/hosts
+## Configure
+```
 ansible-inventory --list -y
 
 [servers]
@@ -20,10 +24,15 @@ ansible_python_interpreter=/usr/bin/python3
 ansible_user=ubuntu
 ansible_ssh_private_key_file=<file>
 
+```
+
+## RUN
+```
 ansible all -a "df -h" -u ubuntu
 ansible servers -a "uptime" -u ubuntu
 
 ansible all -m ping -u ubuntu
+ansible-playbook -i inventory.ini playbook.yaml
 ```
 
 # Ansible Zero to Hero
