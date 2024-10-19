@@ -1,3 +1,36 @@
+# Ansible Quickstart Guide
+
+## Installation
+
+```bash
+$ sudo apt update
+$ sudo apt install software-properties-common
+$ sudo add-apt-repository --yes --update ppa:ansible/ansible
+$ sudo apt install ansible
+
+sudo nano /etc/ansible/hosts
+ansible-inventory --list -y
+
+[servers]
+server1 ansible_host=<Public IP>
+server2 ansible_host=<Public IP>
+server3 ansible_host=<Public IP>
+
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3
+ansible_user=ubuntu
+ansible_ssh_private_key_file=<file>
+
+ansible all -a "df -h" -u ubuntu
+ansible servers -a "uptime" -u ubuntu
+
+ansible all -m ping -u ubuntu
+
+
+---
+
+
+
 # Ansible Zero to Hero
 
 Day 1: Introduction to Ansible and Getting Started
