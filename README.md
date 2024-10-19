@@ -1,12 +1,11 @@
 # Ansible Quickstart Guide
 
-## Installation
-
-```bash
-$ sudo apt update
-$ sudo apt install software-properties-common
-$ sudo add-apt-repository --yes --update ppa:ansible/ansible
-$ sudo apt install ansible
+## TL:DR
+```
+sudo apt update
+sudo apt install software-properties-common
+sudo add-apt-repository --yes --update ppa:ansible/ansible
+sudo apt install ansible
 
 sudo nano /etc/ansible/hosts
 ansible-inventory --list -y
@@ -25,11 +24,7 @@ ansible all -a "df -h" -u ubuntu
 ansible servers -a "uptime" -u ubuntu
 
 ansible all -m ping -u ubuntu
-
-
----
-
-
+```
 
 # Ansible Zero to Hero
 
